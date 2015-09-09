@@ -20,6 +20,24 @@ var ogreHealth = 100;
 var userHealth = 100;
 var ogreAttack = Math.floor(Math.random() * 5);
 //functions
+var strengthFunct = function() {
+    if(strength === "yes"){
+        var userAttackLS = Math.floor(Math.random() * 6);
+        while(ogreHealth < 0) {
+            confirm("You hit the ogre for " + userAttackLS + " damage!");
+            confirm(ogreVariation[Math.floor(Math.random()* 5)] + ogreAttack + " damage!");
+            userHealth = userHealth - ogreAttack;
+            ogreHealth = ogreHealth - userAttackLS;
+        }
+        if(ogreHealth === 0){
+            confrontationEnd = false;
+            confirm("You defeated the ogre! But... Is victory sweet? You have murdered the great ogre god Shrek. Never again will he grace you with his love. He will never grace anyone again with his love, because you have defeated him. R.I.P. Shrek 20 o' meme-20memeteen");
+        }
+        } else if(strength === "no"){
+            confrontationEnd = false;
+            confirm("The ogre kicks you out of his swamp and smites you as you are not strong enough to wield the sword. R.I.P. in pieces.");
+            }
+}
 /* attackFunct = function(){
     //asking if they have a long sword, long sword means they need to be strong, short sword will result in death due to ogre's thick skin, and medium will take fast reflexes.
     
@@ -55,24 +73,11 @@ switch (whatDo) {
         confirm("Are you stupid, brave, or both?");
         /* while (!confrontationEnd){
             attackFunct(); */
-            switch (swordLength){
+            switch (swordLength) {
                 case 'long':
-                    if(strength === "yes"){
-        var userAttackLS = Math.floor(Math.random() * 6);
-        while(ogreHealth < 0) {
-            confirm("You hit the ogre for " + userAttackLS + " damage!");
-            confirm(ogreVariation[Math.floor(Math.random()* 5)] + ogreAttack + " damage!");
-            userHealth = userHealth - ogreAttack;
-            ogreHealth = ogreHealth - userAttackLS;
-        }
-        if(ogreHealth === 0){
-            confrontationEnd = false;
-            confirm("You defeated the ogre! But... Is victory sweet? You have murdered the great ogre god Shrek. Never again will he grace you with his love. He will never grace anyone again with his love, because you have defeated him. R.I.P. Shrek 20 o' meme-20memeteen");
-        }
-        } else if(strength === "no"){
-            confrontationEnd = false;
-            confirm("The ogre kicks you out of his swamp and smites you as you are not strong enough to wield the sword. R.I.P. in pieces.");
-            }
+                    while (confrontationEnd === false){
+                   strengthFunct();
+                    }
             break;
             }
     break;
