@@ -83,4 +83,8 @@ default :
     alert("You didn't do anything right and you just spilled your spaghetti. You spilt so much, everyone on earth died. R.I.P. spaghettimonster");
     
 }
+var playAgain = confirm("You do want to play again, right?")
+while (playAgain){
+    
+}
 //IT JUST WERKS
