@@ -7,9 +7,9 @@ switch(whatDo){
     case "attack":
     alert("Are you stupid, brave, or both?");
     var swordLength = prompt("Well, since you decided to attack, you must have a sword. How long is your sword?", "Short, medium, or long?").toLowerCase();
-var userHealth = 100;
-var ogreHealth = 100;
-var ogreVariation = ["The ogre's onion breath dealt ", "The ogre's repulsiveness dealt ", "The ogre's meat hands hit you for ", "The ogre's amazingness and love wraps its hand around your heart for ", "The ogre's donkey kicks your knees for ", "The ogre sends all of it's memes at you for "];
+var userHealth = 50;
+var ogreHealth = 50;
+var ogreVariation = ["The ogre's onion breath dealt ", "The ogre's repulsiveness dealt ", "The ogre's meaty hands hit you for ", "The ogre's amazingness and love wraps its hand around your heart for ", "The ogre's donkey kicks your knees for ", "The ogre sends all of it's memes at you for ",""];
 var userAttack = {
     long:Math.floor(Math.random()*15),
     medium:Math.floor(Math.random()*10),
@@ -63,8 +63,11 @@ while(ogreHealth > 0 && userHealth > 0){
 }
 if(ogreHealth <= 0 && userHealth > 0){
     alert("You defeated the ogre! But... Is victory sweet? You have murdered the great ogre god Shrek. Never again will he grace you with his love. He will never grace anyone again with his love, because you have defeated him. R.I.P. Shrek 20 o' meme-20memeteen");
+    console.log("Win");
+    
 } else if (ogreHealth > 0 && userHealth <= 0) {
     alert("The ogre kicks you out of his swamp and smites you, as you were too weak for him.");
+    console.log("Lose");
 } else {
     console.log();
 }
