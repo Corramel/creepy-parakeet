@@ -1,22 +1,31 @@
 //Variables
-alert("An ogre appears to take back his swamp!");
-var whatDo = prompt("Now, what do you do?, You can run, attack, or hide.").toLowerCase();
+monsters = ["A dragon flies overhead, spewing flames everywhere!", "An ogre appears to take back his swamp!", "(TBA)"]
+alert(monsters[Math.floor(Math.random()*3.5)]);
+if(monsters[0]){
+    var enemyHealth = 75;
+    var enemyDodgeVariation = ["You roll away from the dragon's burning flames!", "You block the dragon's fire with your shield.", "You jump over the dragon's tail, barely getting grazed.", "Taking cover from a rock, you dodge the blast of fire directed at your way.", "You parry the dragons attack! Now is your time!"]
+var enemyVariation = ["The dragon slams it's tail down and covers you in dust! You're blinded!"];
+}
+var whatDo = prompt("Quickly! What do you do?", "You can run, attack, or hide.").toLowerCase();
 var strength = prompt("Are you strong?").toLowerCase();
 var reflexes = prompt("Are you fast?").toLowerCase();
-switch(whatDo){
-    case "attack":
-    alert("Are you stupid, brave, or both?");
-    var swordLength = prompt("Well, since you decided to attack, you must have a sword. How long is your sword?", "Short, medium, or long?").toLowerCase();
-var userHealth = 50;
 var ogreHealth = 50;
-var ogreVariation = ["The ogre's onion breath dealt ", "The ogre's repulsiveness dealt ", "The ogre's meaty hands hit you for ", "The ogre's amazingness and love wraps its hand around your heart for ", "The ogre's donkey kicks your knees for ", "The ogre sends all of it's memes at you for ",""];
+var ogreVariation = ["The ogre's onion breath dealt ", "The ogre's repulsiveness dealt ", "The ogre's meaty hands hit you for ", "The ogre's amazingness and love wraps its hand around your heart for ", "The ogre's donkey kicks your knees for ", "The ogre sends all of it's memes at you for "];
+var ogreAttackdmg = Math.floor(Math.random()*12);
+var ogreHitChance = Math.floor(Math.random()*12);
+
+var userHealth = 50;
 var userAttack = {
     long:Math.floor(Math.random()*15),
     medium:Math.floor(Math.random()*10),
     short:0
 };
-var ogreAttackdmg = Math.floor(Math.random()*12);
-var ogreHitChance = Math.floor(Math.random()*12);
+switch(whatDo){
+    case "attack":
+    alert("Are you stupid, brave, or both?");
+    var swordLength = prompt("Well, since you decided to attack, you must have a sword. How long is your sword?", "Short, medium, or long?").toLowerCase();
+
+
 if(swordLength === "long" && strength === "yes"){
     userAttack.long;
 } else if(swordLength === "medium" && reflexes === "yes"){
