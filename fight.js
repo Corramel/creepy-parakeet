@@ -12,16 +12,16 @@ if(monsters[0]){
 } else if(monsters[1]){
     var enemyName = ["Ogre", "ogre"];
     var enemyHealth = 50;
-    var enemyDodgeVariation = ["You dodge the ogre's club!", "You avoid his oinion breath!", "The ogre misses his grab.", "You shield your eyes from his repulsiveness.", "The ogre misses his kick.", "You dodge the orge's punch." ];
-    var enemyVariation = ["The ogre's onion breath dealt ", "The ogre's repulsiveness dealt ", "The ogre's meaty hands hit you for ", "The ogre's amazingness and love wraps its hand around your heart for ", "The ogre's donkey kicks your knees for ", "The ogre his you with his club "];
+    var enemyDodgeVariation = ["You dodge the ogre's club!", "You avoid his oinion breath!", "The ogre misses his grab.", "You shield your eyes from his repulsiveness.", "The ogre misses his kick.", "You dodge the orge's punch!" ];
+    var enemyVariation = ["The ogre's onion breath dealt ", "The ogre's repulsiveness dealt ", "The ogre's meaty hands hit you for ", "The ogre punches you with all his might ", "The ogre's donkey kicks your knees for ", "The ogre hits you with his club "];
     var enemyAttackdmg = Math.floor(Math.random()*10);
     var enemyHitChance = Math.floor(Math.random()*12);
     var enemyDodgeChance = Math.floor(Math.random()*10);
 } else if(monsters[2]){
     var enemyName = ["Goblin", "goblin"];
     var enemyHealth = 30;
-    var enemyDodgeVariation = []; // Add stuff here
-    var enemyVariation = []; // Add stuff here
+    var enemyDodgeVariation = [""]; // Add stuff here
+    var enemyVariation = [The goblin shanks you with his dagger and deals ", "The goblin sweeps your legs out from under you and deals ", "The goblin manages to poke your eyes and dealt ", "The goblin punches you in your kidney for ", "The goblin drop kicks you in the face to deal ", "The goblin throws his dagger at you and dealt " ]; 
     var enemyAttackdmg = Math.floor(Math.random()*8);
     var enemyHitChance = Math.floor(Math.random()*20);
     var enemyDodgeChance = Math.floor(Math.random()*15); //Real luck if you're able to dodge this
