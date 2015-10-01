@@ -103,7 +103,7 @@ while(enemyHealth > 0 && userHealth > 0){
     
 }
 if(ogreHealth <= 0 && userHealth > 0){
-    alert("You defeated the ogre! But... Is victory sweet? You have murdered the great ogre god Shrek. Never again will he grace you with his love. He will never grace anyone again with his love, because you have defeated him. R.I.P. Shrek 20 o' meme-20memeteen");
+    alert("You defeated the ogre! You get to keep his swamp!");
     console.log("Win");
     
 } else if (ogreHealth > 0 && userHealth <= 0) {
