@@ -1,18 +1,19 @@
 //Variables
-monsters = ["A dragon flies overhead, spewing flames everywhere!", "An ogre appears to take back his swamp!", "A goblin tries to steal your gold"]
+monsters = ["A dragon flies overhead, spewing flames everywhere!", "An ogre appears to take back his swamp!", "A goblin tries to steal your gold!"]
 alert(monsters[Math.floor(Math.random()*3.5)]);
 if(monsters[0]){
     var enemyHealth = 75;
     var enemyDodgeVariation = ["You roll away from the dragon's burning flames!", "You block the dragon's fire with your shield.", "You jump over the dragon's tail, barely getting grazed.", "Taking cover from a rock, you dodge the blast of fire directed at your way.", "You parry the dragons attack! Now is your time!"]
-    var enemyVariation = ["The dragon slams it's tail down and covers you in dust! You're blinded!"];
-} if else(monster[1]){
-    
+var enemyVariation = ["The dragon slams it's tail down and covers you in dust! You're blinded!"];
+} else if (monsters[1]{
+    var enemyHealth = 50
+    var enemyDodgeVariation = ["You dodge the ogres club!", "You avoid his oinion breath!", "The ogre misses his grab", "You sheild your eyes from his repulsiveness", "The ogre misses his kick", "You dodge the orge's punch" ]
 }
 var whatDo = prompt("Quickly! What do you do?", "You can run, attack, or hide.").toLowerCase();
 var strength = prompt("Are you strong?").toLowerCase();
 var reflexes = prompt("Are you fast?").toLowerCase();
 var ogreHealth = 50;
-var ogreVariation = ["The ogre's onion breath dealt ", "The ogre's repulsiveness dealt ", "The ogre's meaty hands hit you for ", "The ogre's amazingness and love wraps its hand around your heart for ", "The ogre's donkey kicks your knees for ", "The ogre sends all of it's memes at you for "];
+var ogreVariation = ["The ogre's onion breath dealt ", "The ogre's repulsiveness dealt ", "The ogre's meaty hands hit you for ", "The ogre's amazingness and love wraps its hand around your heart for ", "The ogre's donkey kicks your knees for ", "The ogre his you with his club "];
 var ogreAttackdmg = Math.floor(Math.random()*12);
 var ogreHitChance = Math.floor(Math.random()*12);
 
