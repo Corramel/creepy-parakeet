@@ -4,7 +4,9 @@ alert(monsters[Math.floor(Math.random()*3.5)]);
 if(monsters[0]){
     var enemyHealth = 75;
     var enemyDodgeVariation = ["You roll away from the dragon's burning flames!", "You block the dragon's fire with your shield.", "You jump over the dragon's tail, barely getting grazed.", "Taking cover from a rock, you dodge the blast of fire directed at your way.", "You parry the dragons attack! Now is your time!"]
-var enemyVariation = ["The dragon slams it's tail down and covers you in dust! You're blinded!"];
+    var enemyVariation = ["The dragon slams it's tail down and covers you in dust! You're blinded!"];
+} if else(monster[1]){
+    
 }
 var whatDo = prompt("Quickly! What do you do?", "You can run, attack, or hide.").toLowerCase();
 var strength = prompt("Are you strong?").toLowerCase();
