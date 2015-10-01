@@ -20,8 +20,8 @@ if(monsters[0]){
 } else if(monsters[2]){
     var enemyName = ["Goblin", "goblin"];
     var enemyHealth = 30;
-    var enemyDodgeVariation = [""]; // Add stuff here
-    var enemyVariation = [The goblin shanks you with his dagger and deals ", "The goblin sweeps your legs out from under you and deals ", "The goblin manages to poke your eyes and dealt ", "The goblin punches you in your kidney for ", "The goblin drop kicks you in the face to deal ", "The goblin throws his dagger at you and dealt " ]; 
+    var enemyDodgeVariation = ["You dodge the godlin's dagger", "You jump over you goblin's leg sweep!", "You swipe the goblin's hands before he can poke your eyes", "You dodge the goblin's kidney punch", "You duck to avoid the goblin's drop kick", "You matrix dodge the goblin's dagger" ]; // Possible for the goblin to take when he misses the drop kick? 
+    var enemyVariation = ["The goblin shanks you with his dagger and deals ", "The goblin sweeps your legs out from under you and deals ", "The goblin manages to poke your eyes and dealt ", "The goblin punches you in your kidney for ", "The goblin drop kicks you in the face to deal ", "The goblin throws his dagger at you and dealt " ]; 
     var enemyAttackdmg = Math.floor(Math.random()*8);
     var enemyHitChance = Math.floor(Math.random()*20);
     var enemyDodgeChance = Math.floor(Math.random()*15); //Real luck if you're able to dodge this
