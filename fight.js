@@ -1,5 +1,5 @@
 //Variables
-monsters = ["A dragon flies overhead, spewing flames everywhere!", "An ogre appears to take back his swamp!", "(TBA)"]
+monsters = ["A dragon flies overhead, spewing flames everywhere!", "An ogre appears to take back his swamp!", "A goblin tries to steal your gold"]
 alert(monsters[Math.floor(Math.random()*3.5)]);
 if(monsters[0]){
     var enemyHealth = 75;
