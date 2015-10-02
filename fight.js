@@ -41,8 +41,8 @@ var userAttack = {
     medium:Math.floor(Math.random()*10),
     short:0
 };
-function shield(strength, reflexes, weapons){
-    if(strength === "yes" && reflexes === "yes" && weapons === "sword"){
+    if(strength === "yes" && reflexes === "yes" && weaponChoice === "sword" && ()){
+        alert("You're strong enough to wield a shield along with your sword!")
         var userHealth = 75;
     } else {
         return 0
@@ -115,16 +115,16 @@ if(ogreHealth <= 0 && userHealth > 0){
 break;
 case "run":
     if(reflexes === "yes"){
-            alert("You escape the swamp! No one got hurt, and Shrek has his swamp back. Everyone is happy!");
+            alert("You escape the swamp! No one got hurt, and Shrek has his swamp back. You are a good person. You shall recieve Shrek's blessing later in your life, when you really need it.");
         } else {
-            alert("You try to run, but the ogre cathes you and gobbles you up!");
+            alert("You try to run, but the ogre smites you and stomps you into the ground. You die. R.I.P. filthy plebian, don't mess with Shrek!");
         }
 break;
 case 'hide':
-        alert("Your cowardice in hiding has gotten you killed by the ogre!");
+        alert("You tried to hide in HIS swamp. Seriously? Are you stupid? He found you and absolutely oblitterated you. Come on, fam.");
 break;
 default :
-    alert("You did not folow rules and therfore lose.");
+    alert("You didn't do anything right and you just spilled your spaghetti. You spilt so much, everyone on earth died. R.I.P. spaghettimonster");
     
 }
 var playAgain = confirm("You do want to play again, right?")
