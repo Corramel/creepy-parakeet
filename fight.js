@@ -115,16 +115,16 @@ if(ogreHealth <= 0 && userHealth > 0){
 break;
 case "run":
     if(reflexes === "yes"){
-            alert("You escape the swamp! No one got hurt, and Shrek has his swamp back. You are a good person. You shall recieve Shrek's blessing later in your life, when you really need it.");
+            alert("You escape the swamp! No one got hurt, and Shrek has his swamp back. Everyone is happy!");
         } else {
-            alert("You try to run, but the ogre smites you and stomps you into the ground. You die. R.I.P. filthy plebian, don't mess with Shrek!");
+            alert("You try to run, but the ogre cathes you and gobbles you up!");
         }
 break;
 case 'hide':
-        alert("You tried to hide in HIS swamp. Seriously? Are you stupid? He found you and absolutely oblitterated you. Come on, fam.");
+        alert("Your cowardice in hiding has gotten you killed by the ogre!");
 break;
 default :
-    alert("You didn't do anything right and you just spilled your spaghetti. You spilt so much, everyone on earth died. R.I.P. spaghettimonster");
+    alert("You did not folow rules and therfore lose.");
     
 }
 var playAgain = confirm("You do want to play again, right?")
