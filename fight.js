@@ -1,4 +1,6 @@
 //Variables
+playing = true
+while (playing){
 monsters = ["A dragon flies overhead, spewing flames everywhere!", "An ogre appears to take back his swamp!", "A goblin tries to steal your gold!"]
 alert(monsters[Math.floor(Math.random()*3.5)]);
 if(monsters[0]){
@@ -25,7 +27,8 @@ if(monsters[0]){
     var enemyDodgeChance = Math.floor(Math.random()*10);
     var enemyWinMessage = "You defeated the ogre! You get to keep his swamp!";
     var enemyLoseMessage = "The ogre kicks you out of his swamp and smites you, as you were too weak for him.";
-    var enemyFastMessage = ""
+    var enemySlowMessage = "You try to run, but the ogre cathes you and gobbles you up!"
+    var enemyFastMessage = "ur sanic and you run faster than the ogre, you win" //placeholder
 } else if(monsters[2]){
     var enemyName = ["Goblin", "goblin"];
     var enemySpeed = 50;
@@ -37,6 +40,8 @@ if(monsters[0]){
     var enemyDodgeChance = Math.floor(Math.random()*15); //Real luck if you're able to dodge this
     var enemyWinMessage = "You defeated the goblin and keep your gold. Win win scenario! You win!";
     var enemyLoseMessage = "You've suffered enough damage that the goblin gets his goblin friends and they steal your stuff! You lose.";
+    var enemyFastMessage = "goblin is sanic and steals your gold anyways, you lose" // placeholder
+    var enemySlowMessage = "goblin is sanic and steals your gold anyways, you lose" // placeholder
     
 }
 // prompt Variables
@@ -46,16 +51,19 @@ var reflexes = prompt("Are you fast?").toLowerCase();
 var weapons = ["Bow and Arrows", " Sword", " Bombs"] //Will add staff system later, this is to show them what weapon they can choose.
 // User Variables
 var userHealth = 50;
-var userSpeed = []
+var userSpeed = [];
+var userDodgeChance = [];
 if(reflexes === "yes"){
     var userSpeed = 50;
+    var userDodgeChance = Math.floor(Math.random()*17.5);
 } else {
     var userSpeed = 10;
+    var userDodgeChance = Math.floor(Math.random()*12);
 }
 var userAttack = {
     long:Math.floor(Math.random()*15),
     medium:Math.floor(Math.random()*10),
-    short:0
+    short:Math.floor(Math.random()*8.21)
 };
 
 switch(whatDo){
@@ -83,35 +91,56 @@ switch(whatDo){
         } else if(swordLength === "short" && reflexes === "yes" && monsters[2]){
             var enemyHitChance = Math.floor(Math.random()*10);
             var enemyDodgeChance = Math.floor(Math.random()*10);
+        } else { 
+            if(monsters[0] || mosnters[1]){
+               userHealth = 0;
         } else {
-                userHealth = 0;
+            console.log();
+        }
         }
         break;
         case "bow and arrows":
-            //ENTER CODE FOR BOW & ARROWS HERE
+            //ENTER CODE or DESCRIPTION FOR BOW & ARROWS HERE
         break;
         case "bombs":
-            //ENTER CODE FOR BOMBS HERE
+            //ENTER CODE or DESCRIPTION FOR BOMBS HERE
         break;
     }
 }
 
 while(enemyHealth > 0 && userHealth > 0){
-    if(ogreHitChance >= 4){
+    if(enemyHitChance >= userDodgeChance){
     console.log();
-    ogreHitChance = Math.floor(Math.random()*12);
+    if(monsters[0]){
+        enemyHitChance = Math.floor(Math.random()*15);
+    } else if(monsters[1]){
+        enemyHitChance = Math.floor(Math.random()*12);
+    } else if(monsters[2]){
+        enemyHitChance = Math.floor(Math.random()*20);
+    }
+    
 } else {
-    ogreAttackdmg = 0;
-    ogreHitChance = Math.floor(Math.random()*12);
+    enemyAttackdmg = 0;
+    if(monsters[0]){
+        enemyHitChance = Math.floor(Math.random()*15);
+    } else if(monsters[1]){
+        enemyHitChance = Math.floor(Math.random()*12);
+    } else if(monsters[2]){
+        enemyHitChance = Math.floor(Math.random()*20);
+    }
 }
 
-    if(ogreAttackdmg > 0){
-        alert(ogreVariation[Math.floor(Math.random()*5)] + ogreAttackdmg + " damage!");
+    if(enemyAttackdmg > 0){
+        alert(enemyVariation[Math.floor(Math.random()*6)] + enemyAttackdmg + " damage!");
     } else {
-        alert("You dodged the ogre's attack!");
+        alert(enemyDodgeVariation);
     }
-    userHealth = userHealth - ogreAttackdmg;
-    ogreAttackdmg = Math.floor(Math.random()*12);
+    userHealth = userHealth - enemyAttackdmg;
+    if(monsters[0]){
+    enemyAttackdmg =  Math.floor(Math.random()*12);
+} else if(monsters[1]){
+    enemyAttackdmg = Math.floor(Math.random()*10);
+}
     switch(swordLength){
         case "long":
             alert("You did " + userAttack.long + " damage to the ogre!");
@@ -142,20 +171,21 @@ if(enemyHealth <= 0 && userHealth > 0){
 break;
 case "run":
     if(reflexes === "yes"){
-            alert();
+            alert(enemyFastMessage);
         } else {
-            alert("You try to run, but the ogre cathes you and gobbles you up!");
+            alert(enemySlowMessage);
         }
 break;
 case 'hide':
-        alert("Your cowardice in hiding has gotten you killed by the ogre!");
+        alert(enemyHideMessage);
 break;
 default :
     alert("You did not folow rules and therfore lose.");
     
 }
-var playAgain = confirm("You do want to play again, right?")
-while (playAgain){
-    
+
+
+var playing = confirm("Want to play again?");
 }
+   
 //IT JUST WERKS
