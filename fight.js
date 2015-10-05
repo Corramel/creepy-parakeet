@@ -2,8 +2,9 @@
 playing = true
 while (playing){
 monsters = ["A dragon flies overhead, spewing flames everywhere!", "An ogre appears to take back his swamp!", "A goblin tries to steal your gold!"]
-alert(monsters[Math.floor(Math.random()*3.5)]);
-if(monsters[0]){
+monstersChoice = monsters[Math.floor(Math.random()*3.5)]
+alert(monstersChoice);
+if(monstersChoice[0]){
     var enemyName = ["Dragon", "dragon"];
     var enemySpeed = 25;
     var enemyHealth = 75;
@@ -16,7 +17,7 @@ if(monsters[0]){
     var enemyLoseMessage = "The dragon stomps on you! You're crushed by the heavy weight, and are now a pancake. You lose.";
     var enemyFastMessage = "You run away from the dragon, who is too lazy to chase after you. ...I guess you win?";
     var enemySlowMessage = "You tried to run away from the dragon, but it sees your lame attempt, and decides to gobble you up.";
-} else if(monsters[1]){
+} else if(monstersChoice[1]){
     var enemyName = ["Ogre", "ogre"];
     var enemySpeed = 10;
     var enemyHealth = 50;
@@ -28,8 +29,8 @@ if(monsters[0]){
     var enemyWinMessage = "You defeated the ogre! You get to keep his swamp!";
     var enemyLoseMessage = "The ogre kicks you out of his swamp and smites you, as you were too weak for him.";
     var enemySlowMessage = "You try to run, but the ogre cathes you and gobbles you up!"
-    var enemyFastMessage = "You're super speedy and escape the ogre! You win!" 
-} else if(monsters[2]){
+    var enemyFastMessage = "You're super speedy and escape the ogre! You win!" //placeholder
+} else if(monstersChoice[2]){
     var enemyName = ["Goblin", "goblin"];
     var enemySpeed = 50;
     var enemyHealth = 30;
@@ -40,8 +41,8 @@ if(monsters[0]){
     var enemyDodgeChance = Math.floor(Math.random()*15); //Real luck if you're able to dodge this
     var enemyWinMessage = "You defeated the goblin and keep your gold. Win win scenario! You win!";
     var enemyLoseMessage = "You've suffered enough damage that the goblin gets his goblin friends and they steal your stuff! You lose.";
-    var enemyFastMessage = "The goblin is super speedy and steal all your gold!" 
-    var enemySlowMessage = "The goblin is super speedy and steal all your gold!"
+    var enemyFastMessage = "goblin is sanic and steals your gold anyways, you lose" // placeholder
+    var enemySlowMessage = "goblin is sanic and steals your gold anyways, you lose" // placeholder
     
 }
 // prompt Variables
@@ -92,7 +93,7 @@ switch(whatDo){
             var enemyHitChance = Math.floor(Math.random()*10);
             var enemyDodgeChance = Math.floor(Math.random()*10);
         } else { 
-            if(monsters[0] || mosnters[1]){
+            if(monstersChoice[0] || mosntersChoice[1]){
                userHealth = 0;
         } else {
             console.log();
@@ -100,22 +101,21 @@ switch(whatDo){
         }
         break;
         case "bow and arrows":
-            alert("You wield the legendary bow of Apollo. It has the power of the gods!")
+            //ENTER CODE or DESCRIPTION FOR BOW & ARROWS HERE
         break;
         case "bombs":
-            alert("You wield the messy weapon of bombs. They are highly destructive but inaccurate.")
+            //ENTER CODE or DESCRIPTION FOR BOMBS HERE
         break;
     }
-}
 
 while(enemyHealth > 0 && userHealth > 0){
     if(enemyHitChance >= userDodgeChance){
     console.log();
-    if(monsters[0]){
+    if(monstersChoice[0]){
         enemyHitChance = Math.floor(Math.random()*15);
-    } else if(monsters[1]){
+    } else if(monstersChoice[1]){
         enemyHitChance = Math.floor(Math.random()*12);
-    } else if(monsters[2]){
+    } else if(monstersChoice[2]){
         enemyHitChance = Math.floor(Math.random()*20);
     }
     
@@ -133,23 +133,23 @@ while(enemyHealth > 0 && userHealth > 0){
     if(enemyAttackdmg > 0){
         alert(enemyVariation[Math.floor(Math.random()*6)] + enemyAttackdmg + " damage!");
     } else {
-        alert(enemyDodgeVariation);
+        alert(enemyDodgeVariation[Math.floor(Math.random()*6)]);
     }
     userHealth = userHealth - enemyAttackdmg;
-    if(monsters[0]){
+    if(monstersChoice[0]){
     enemyAttackdmg =  Math.floor(Math.random()*12);
-} else if(monsters[1]){
+} else if(monstersChoice[1]){
     enemyAttackdmg = Math.floor(Math.random()*10);
 }
     switch(swordLength){
         case "long":
-            alert("You did " + userAttack.long + " damage to the ogre!");
-            ogreHealth = ogreHealth - userAttack.long;
+            alert("You did " + userAttack.long + " damage to " + enemyName);
+            enemyHealth = enemyHealth - userAttack.long;
             userAttack.long = Math.floor(Math.random()*15);
         break;
         case "medium":
-            alert("You did " + userAttack.medium + " damage to the ogre!");
-            ogreHealth = ogreHealth - userAttack.medium;
+            alert("You did " + userAttack.medium + " damage to  the" + enemyName[1]);
+            enemyHealth = enemyHealth - userAttack.medium;
             userAttack.medium = Math.floor(Math.random()*10);
         break;
         default:
@@ -182,9 +182,10 @@ break;
 default :
     alert("You did not folow rules and therfore lose.");
     
+
+
+
 }
-
-
 var playing = confirm("Want to play again?");
 }
    
