@@ -28,7 +28,7 @@ if(monsters[0]){
     var enemyWinMessage = "You defeated the ogre! You get to keep his swamp!";
     var enemyLoseMessage = "The ogre kicks you out of his swamp and smites you, as you were too weak for him.";
     var enemySlowMessage = "You try to run, but the ogre cathes you and gobbles you up!"
-    var enemyFastMessage = "ur sanic and you run faster than the ogre, you win" //placeholder
+    var enemyFastMessage = "You're super speedy and escape the ogre! You win!" //placeholder
 } else if(monsters[2]){
     var enemyName = ["Goblin", "goblin"];
     var enemySpeed = 50;
