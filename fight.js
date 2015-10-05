@@ -28,7 +28,7 @@ if(monsters[0]){
     var enemyWinMessage = "You defeated the ogre! You get to keep his swamp!";
     var enemyLoseMessage = "The ogre kicks you out of his swamp and smites you, as you were too weak for him.";
     var enemySlowMessage = "You try to run, but the ogre cathes you and gobbles you up!"
-    var enemyFastMessage = "You're super speedy and escape the ogre! You win!" //placeholder
+    var enemyFastMessage = "You're super speedy and escape the ogre! You win!" 
 } else if(monsters[2]){
     var enemyName = ["Goblin", "goblin"];
     var enemySpeed = 50;
@@ -40,8 +40,8 @@ if(monsters[0]){
     var enemyDodgeChance = Math.floor(Math.random()*15); //Real luck if you're able to dodge this
     var enemyWinMessage = "You defeated the goblin and keep your gold. Win win scenario! You win!";
     var enemyLoseMessage = "You've suffered enough damage that the goblin gets his goblin friends and they steal your stuff! You lose.";
-    var enemyFastMessage = "goblin is sanic and steals your gold anyways, you lose" // placeholder
-    var enemySlowMessage = "goblin is sanic and steals your gold anyways, you lose" // placeholder
+    var enemyFastMessage = "The goblin is super speedy and steal all your gold!" 
+    var enemySlowMessage = "The goblin is super speedy and steal all your gold!"
     
 }
 // prompt Variables
@@ -100,10 +100,10 @@ switch(whatDo){
         }
         break;
         case "bow and arrows":
-            //ENTER CODE or DESCRIPTION FOR BOW & ARROWS HERE
+            alert("You wield the legendary bow of Apollo. It has the power of the gods!")
         break;
         case "bombs":
-            //ENTER CODE or DESCRIPTION FOR BOMBS HERE
+            alert("You wield the messy weapon of bombs. They are highly destructive but inaccurate.")
         break;
     }
 }
