@@ -4,12 +4,12 @@ while (playing){
 monsters = ["A dragon flies overhead, spewing flames everywhere!", "An ogre appears to take back his swamp!", "A goblin tries to steal your gold!"]
 monstersChoice = monsters[Math.floor(Math.random()*3.5)]
 alert(monstersChoice);
-if(monstersChoice[0]){
+if(monstersChoice === monsters[0]){
     var enemyName = ["Dragon", "dragon"];
     var enemySpeed = 25;
     var enemyHealth = 75;
     var enemyDodgeVariation = ["You roll away from the dragon's burning flames!", "You block the dragon's fire with your shield.", "You jump over the dragon's tail, barely getting grazed.", "Taking cover from a rock, you dodge the blast of fire directed at your way.", "You parry the dragons attack! Now is your time!"]
-    var enemyVariation = ["The dragon slams it's tail down and covers you in dust! You're blinded!"];
+    var enemyVariation = ["The dragon slams it's tail down and covers you in dust! Your eyes hurt so much you take ", "The dragon spews it's firey breath at you and singes your hair off for ", "The dragon swings it's tail at you for ", "The dragon brings it's claw so close you can taste it. You take "];
     var enemyAttackdmg = Math.floor(Math.random()*12);
     var enemyHitChance = Math.floor(Math.random()*15);
     var enemyDodgeChance = 0; //Dragons can't dodge
@@ -17,7 +17,7 @@ if(monstersChoice[0]){
     var enemyLoseMessage = "The dragon stomps on you! You're crushed by the heavy weight, and are now a pancake. You lose.";
     var enemyFastMessage = "You run away from the dragon, who is too lazy to chase after you. ...I guess you win?";
     var enemySlowMessage = "You tried to run away from the dragon, but it sees your lame attempt, and decides to gobble you up.";
-} else if(monstersChoice[1]){
+} else if(monstersChoice === monsters[1]){
     var enemyName = ["Ogre", "ogre"];
     var enemySpeed = 10;
     var enemyHealth = 50;
@@ -30,7 +30,7 @@ if(monstersChoice[0]){
     var enemyLoseMessage = "The ogre kicks you out of his swamp and smites you, as you were too weak for him.";
     var enemySlowMessage = "You try to run, but the ogre cathes you and gobbles you up!"
     var enemyFastMessage = "You're super speedy and escape the ogre! You win!" //placeholder
-} else if(monstersChoice[2]){
+} else if(monstersChoice === monsters[2]){
     var enemyName = ["Goblin", "goblin"];
     var enemySpeed = 50;
     var enemyHealth = 30;
@@ -49,7 +49,7 @@ if(monstersChoice[0]){
 var whatDo = prompt("Quickly! What do you do?", "You can run, attack, or hide.").toLowerCase();
 var strength = prompt("Are you strong?").toLowerCase();
 var reflexes = prompt("Are you fast?").toLowerCase();
-var weapons = ["Bow and Arrows", " Sword", " Bombs"] //Will add staff system later, this is to show them what weapon they can choose.
+var weapons = ["Bow and Arrows", "Sword", "Bombs"] //Will add staff system later, this is to show them what weapon they can choose.
 // User Variables
 var userHealth = 50;
 var userSpeed = [];
@@ -78,7 +78,7 @@ switch(whatDo){
                 alert("You're strong enough to wield a shield along with your medium-length sword!");
                 var confirmShield = confirm("Do you want to use a shield? Your speed will be lowered by a small amount.");
                 if(confirmShield === true){
-                    var userHealth = 75;
+                    var userHealth = 50 + Math.floor(Math.random()*12.5);
                     var userSpeed = 40;
                 }
                 }
@@ -143,12 +143,12 @@ while(enemyHealth > 0 && userHealth > 0){
 }
     switch(swordLength){
         case "long":
-            alert("You did " + userAttack.long + " damage to " + enemyName);
+            alert("You did " + userAttack.long + " damage to the " + enemyName[1] + ".");
             enemyHealth = enemyHealth - userAttack.long;
-            userAttack.long = Math.floor(Math.random()*15);
+            userAttack.long = Math.floor(Math.random()*10.3);
         break;
         case "medium":
-            alert("You did " + userAttack.medium + " damage to  the" + enemyName[1]);
+            alert("You did " + userAttack.medium + " damage to the " + enemyName[1] + ".");
             enemyHealth = enemyHealth - userAttack.medium;
             userAttack.medium = Math.floor(Math.random()*10);
         break;
