@@ -188,5 +188,6 @@ default :
 }
 var playing = confirm("Want to play again?");
 }
+   //The win lose ratio is off. The user wins too often.
    
 //IT JUST WERKS
