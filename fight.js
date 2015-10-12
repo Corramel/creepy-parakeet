@@ -41,8 +41,8 @@ if(monstersChoice === monsters[0]){
     var enemyDodgeChance = Math.floor(Math.random()*15); //Real luck if you're able to dodge this
     var enemyWinMessage = "You defeated the goblin and keep your gold. Win win scenario! You win!";
     var enemyLoseMessage = "You've suffered enough damage that the goblin gets his goblin friends and they steal your stuff! You lose.";
-    var enemyFastMessage = "goblin is sanic and steals your gold anyways, you lose" // placeholder
-    var enemySlowMessage = "goblin is sanic and steals your gold anyways, you lose" // placeholder
+    var enemyFastMessage = "The goblin is too fast for you and steals your gold anyways, you lose" // placeholder
+    var enemySlowMessage = "The goblin is too fast for you and steals your gold anyways, you lose" // placeholder
     
 }
 // prompt Variables
@@ -76,7 +76,7 @@ switch(whatDo){
     
     switch(weaponChoice){
         case "sword":
-            var userAttacks = ["You attack the " + enemyName[1] + "'s [insert part here] with your sword for ", "You attack the " + enemyName[1] + "'s [insert 2nd part here] with your sword for"] //change the text inbetween quotes to w/e
+            var userAttacks = ["You perform a thrust at the " + enemyName[1] + " with your sword for ", "You bring your sword down on the " + enemyName[1] + " for"] 
             var swordLength = prompt("How long is your sword?", "Short, medium, or long?").toLowerCase();
                 if(strength === "yes" && swordLength === "medium"){
                 alert("You're strong enough to wield a shield along with your medium-length sword!");
@@ -200,6 +200,6 @@ default :
 }
 var playing = confirm("Want to play again?");
 }
-   //The win lose ratio is off. The user wins too often.
+   
    
 //IT JUST WERKS
