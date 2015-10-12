@@ -49,7 +49,7 @@ if(monstersChoice === monsters[0]){
 var whatDo = prompt("Quickly! What do you do?", "You can run, attack, or hide.").toLowerCase();
 var strength = prompt("Are you strong?").toLowerCase();
 var reflexes = prompt("Are you fast?").toLowerCase();
-var weapons = ["Bow and Arrows", "Sword", "Bombs"] //Will add staff system later, this is to show them what weapon they can choose.
+var weapons = ["Bow and Arrows", "Sword"] //Will add staff system later, this is to show them what weapon they can choose.
 // User Variables
 var userHealth = 50;
 var userSpeed = [];
@@ -62,9 +62,12 @@ if(reflexes === "yes"){
     var userDodgeChance = Math.floor(Math.random()*12);
 }
 var userAttack = {
-    long:Math.floor(Math.random()*15),
-    medium:Math.floor(Math.random()*10),
-    short:Math.floor(Math.random()*8.21)
+    long:Math.floor(Math.random()*10),
+    medium:Math.floor(Math.random()*9),
+    short:Math.floor(Math.random()*7.21),
+    bowgob:Math.floor(Math.random()*7.5),
+    bowdrag:Math.floor(Math.random()*9),
+    bowogr:Math.floor(Math.random()*8)
 };
 
 switch(whatDo){
@@ -73,6 +76,7 @@ switch(whatDo){
     
     switch(weaponChoice){
         case "sword":
+            var userAttacks = ["You attack the " + enemyName[1] + "'s [insert part here] with your sword for ", "You attack the " + enemyName[1] + "'s [insert 2nd part here] with your sword for"] //change the text inbetween quotes to w/e
             var swordLength = prompt("How long is your sword?", "Short, medium, or long?").toLowerCase();
                 if(strength === "yes" && swordLength === "medium"){
                 alert("You're strong enough to wield a shield along with your medium-length sword!");
@@ -101,10 +105,18 @@ switch(whatDo){
         }
         break;
         case "bow and arrows":
-            //ENTER CODE or DESCRIPTION FOR BOW & ARROWS HERE
-        break;
-        case "bombs":
-            //ENTER CODE or DESCRIPTION FOR BOMBS HERE
+            alert("So be it! You pick up your bow, and your quiver full of arrows!");
+            if(monstersChoice[2]){
+                var enemyDodgeChance = Math.floor(Math.random*30);
+                alert("You did " + userAttack.bowgob + " damage to the " + enemyName[1] + ".");
+                enemyHealth = enemyHealth - userAttack.long;
+                userAttack.bowgob = Math.floor(Math.random()*7.5);
+            } else if(monstersChoice[1]){
+                alert("You did " + userAttack.bowogr + " damage to the " + enemyName[1] + ".");
+            } else if(monstersChoice[0]){
+                alert("You did " + userAttack.bowdrag + " damage to the " + enemyName[1] + ".");
+            }
+            
         break;
     }
 
@@ -148,7 +160,7 @@ while(enemyHealth > 0 && userHealth > 0){
             userAttack.long = Math.floor(Math.random()*10.3);
         break;
         case "medium":
-            alert("You did " + userAttack.medium + " damage to the " + enemyName[1] + ".");
+            alert(userAttacks[Math.floor(Math.random())] + userAttack.medium + " health points.");
             enemyHealth = enemyHealth - userAttack.medium;
             userAttack.medium = Math.floor(Math.random()*10);
         break;
@@ -162,7 +174,7 @@ if(enemyHealth <= 0 && userHealth > 0){
     alert(enemyWinMessage);
     console.log("Win");
     
-} else if (enemyHealth > 0 && enemyHealth <= 0) {
+} else if (enemyHealth > 0 && userHealth <= 0) {
     alert(enemyLoseMessage);
     console.log("Lose");
 } else {
@@ -180,7 +192,7 @@ case 'hide':
         alert(enemyHideMessage);
 break;
 default :
-    alert("You did not folow rules and therfore lose.");
+    alert("You did not folow rules and therefore lose.");
     
 
 
