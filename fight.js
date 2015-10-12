@@ -1,3 +1,6 @@
+/* jQuery.fn.extend({
+game: function(){
+    function nicememe(){ */
 //Variables
 playing = true
 while (playing){
@@ -205,3 +208,10 @@ var playing = confirm("Want to play again?");
    
    
 //IT JUST WERKS
+
+}
+console.log(nicememe());
+}
+ /*  $('#meme').click(function(){
+   $('#meme').game();
+   }); */
