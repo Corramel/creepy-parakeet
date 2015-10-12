@@ -2,7 +2,7 @@
 playing = true
 while (playing){
 monsters = ["A dragon flies overhead, spewing flames everywhere!", "An ogre appears to take back his swamp!", "A goblin tries to steal your gold!"]
-monstersChoice = monsters[Math.floor(Math.random()*3.5)]
+monstersChoice = monsters[Math.floor(Math.random()*3)]
 alert(monstersChoice);
 if(monstersChoice === monsters[0]){
     var enemyName = ["Dragon", "dragon"];
@@ -54,6 +54,7 @@ var weapons = ["Bow and Arrows", "Sword"] //Will add staff system later, this is
 var userHealth = 50;
 var userSpeed = [];
 var userDodgeChance = [];
+var userHitChance = Math.floor(Math.random()*10);
 if(reflexes === "yes"){
     var userSpeed = 50;
     var userDodgeChance = Math.floor(Math.random()*17.5);
@@ -72,7 +73,7 @@ var userAttack = {
 
 switch(whatDo){
     case "attack":
-    var weaponChoice = prompt("What kind of weapon do you want to use? You can use a " + weapons[0] + ", a " + weapons[1] + ", or " + weapons[2] + ".").toLowerCase();
+    var weaponChoice = prompt("What kind of weapon do you want to use? You can use a " + weapons[0] + ", or " + weapons[1] + ".").toLowerCase();
     
     switch(weaponChoice){
         case "sword":
@@ -141,6 +142,7 @@ while(enemyHealth > 0 && userHealth > 0){
         enemyHitChance = Math.floor(Math.random()*20);
     }
 }
+
 
     if(enemyAttackdmg > 0){
         alert(enemyVariation[Math.floor(Math.random()*6)] + enemyAttackdmg + " damage!");
