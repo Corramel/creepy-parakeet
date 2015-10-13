@@ -4,14 +4,14 @@ game: function(){
 //Variables
 playing = true
 while (playing){
-monsters = ["A dragon flies overhead, spewing flames everywhere!", "An ogre appears to take back his swamp!", "A goblin tries to steal your gold!"]
+monsters = ["<p>A dragon flies overhead, spewing flames everywhere!</p>", "<p>An ogre appears to take back his swamp!</p>", "<p>A goblin tries to steal your gold!</p>"]
 monstersChoice = monsters[Math.floor(Math.random()*3)]
 alert(monstersChoice);
 if(monstersChoice === monsters[0]){
     var enemyName = ["Dragon", "dragon"];
     var enemySpeed = 25;
     var enemyHealth = 75;
-    var enemyDodgeVariation = ["You roll away from the dragon's burning flames!", "You block the dragon's fire with your shield.", "You jump over the dragon's tail, barely getting grazed.", "Taking cover from a rock, you dodge the blast of fire directed at your way.", "You parry the dragons attack! Now is your time!"]
+    var enemyDodgeVariation = ["<p>You roll away from the dragon's burning flames!</p>", "<p>You block the dragon's fire with your shield.", "You jump over the dragon's tail, barely getting grazed.", "Taking cover from a rock, you dodge the blast of fire directed at your way.", "You parry the dragons attack! Now is your time!"]
     var enemyVariation = ["The dragon slams it's tail down and covers you in dust! Your eyes hurt so much you take ", "The dragon spews it's firey breath at you and singes your hair off for ", "The dragon swings it's tail at you for ", "The dragon brings it's claw so close you can taste it. You take "];
     var enemyAttackdmg = Math.floor(Math.random()*12);
     var enemyHitChance = Math.floor(Math.random()*15);
