@@ -5,7 +5,7 @@ game: function(){
 playing = true
 while (playing){
 var monsters = ["<p>A dragon flies overhead, spewing flames everywhere!</p>", "<p>An ogre appears to take back his swamp!</p>", "<p>A goblin tries to steal your gold!</p>"]
-var monstersImage = ["<img src= \"http://images2.alphacoders.com/451/451191.jpg\" />", "<img src= \"http://pre14.deviantart.net/7da2/th/pre/i/2013/349/d/c/ogre__troll_or_something___by_dancuka-d6y1v8n.png\" />", "img src= \"http://orig05.deviantart.net/208f/f/2007/003/8/9/ds__monsters___goblin_by_willowwisp.jpg\" />"]
+var monstersImage = ["<img src= \"http://cdn.playbuzz.com/cdn/845ff10a-f092-4740-b866-36d9e705cd95/79d156c0-83f3-4af2-826e-f963b2283042.jpg\"; height = \"250px\"; width = \"auto\"; />", "<img src= \"http://pre14.deviantart.net/7da2/th/pre/i/2013/349/d/c/ogre__troll_or_something___by_dancuka-d6y1v8n.png\"; height = \"250px\"; width = \"auto\"; />", "<img src = \"http://orig15.deviantart.net/8931/f/2012/282/a/0/goblin_dancer_by_mariusbota-d5h9uyi.jpg\"; height = \"250px\"; width = \"auto\"; />"]
 var monsterRandomChoice = Math.floor(Math.random()*3)
 var monstersChoice = monsters[monsterRandomChoice]
 var monstersImageChoice = monstersImage[monsterRandomChoice]
