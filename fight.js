@@ -1,6 +1,6 @@
-/* jQuery.fn.extend({
+jQuery.fn.extend({
 game: function(){
-    function nicememe(){ */
+    function nicememe(){
 //Variables
 playing = true
 while (playing){
@@ -20,6 +20,7 @@ if(monstersChoice === monsters[0]){
     var enemyLoseMessage = "The dragon stomps on you! You're crushed by the heavy weight, and are now a pancake. You lose.";
     var enemyFastMessage = "You run away from the dragon, who is too lazy to chase after you. ...I guess you win?";
     var enemySlowMessage = "You tried to run away from the dragon, but it sees your lame attempt, and decides to gobble you up.";
+    var enemyHideMessage = "The dragon burns the entire field! Taking shelter in a cave, you made a grave mistake. It's the dragon's cave..."
 } else if(monstersChoice === monsters[1]){
     var enemyName = ["Ogre", "ogre"];
     var enemySpeed = 10;
@@ -33,6 +34,7 @@ if(monstersChoice === monsters[0]){
     var enemyLoseMessage = "The ogre kicks you out of his swamp and smites you, as you were too weak for him.";
     var enemySlowMessage = "You try to run, but the ogre cathes you and gobbles you up!"
     var enemyFastMessage = "You're super speedy and escape the ogre! You win!" //placeholder
+    var enemyHideMessage = "you hid and lost" //quick placeholder
 } else if(monstersChoice === monsters[2]){
     var enemyName = ["Goblin", "goblin"];
     var enemySpeed = 50;
@@ -46,6 +48,7 @@ if(monstersChoice === monsters[0]){
     var enemyLoseMessage = "You've suffered enough damage that the goblin gets his goblin friends and they steal your stuff! You lose.";
     var enemyFastMessage = "The goblin is too fast for you and steals your gold anyways, you lose" // placeholder
     var enemySlowMessage = "The goblin is too fast for you and steals your gold anyways, you lose" // placeholder
+    var enemyHideMessage = "you hid and lostmeme" //placeholder
     
 }
 // prompt Variables
@@ -194,7 +197,8 @@ case "run":
         }
 break;
 case 'hide':
-        alert(enemyHideMessage);
+        $('<p id = "memes"></p>').appendTo('body');
+        $(enemyHideMessage).appendTo('#memes');
 break;
 default :
     alert("You did not folow rules and therefore lose.");
@@ -212,6 +216,3 @@ var playing = confirm("Want to play again?");
 }
 console.log(nicememe());
 }
- /*  $('#meme').click(function(){
-   $('#meme').game();
-   }); */
