@@ -33,8 +33,8 @@ if(monstersChoice === monsters[0]){
     var enemyWinMessage = "You defeated the ogre! You get to keep his swamp!";
     var enemyLoseMessage = "The ogre kicks you out of his swamp and smites you, as you were too weak for him.";
     var enemySlowMessage = "You try to run, but the ogre cathes you and gobbles you up!"
-    var enemyFastMessage = "You're super speedy and escape the ogre! You win!" //placeholder
-    var enemyHideMessage = "you hid and lost" //quick placeholder
+    var enemyFastMessage = "You're super speedy and escape the ogre! You win!" 
+    var enemyHideMessage = "Your cowardice in hiding has resluted in a loss. The ogre finds you!"
 } else if(monstersChoice === monsters[2]){
     var enemyName = ["Goblin", "goblin"];
     var enemySpeed = 50;
@@ -46,9 +46,9 @@ if(monstersChoice === monsters[0]){
     var enemyDodgeChance = Math.floor(Math.random()*15); //Real luck if you're able to dodge this
     var enemyWinMessage = "You defeated the goblin and keep your gold. Win win scenario! You win!";
     var enemyLoseMessage = "You've suffered enough damage that the goblin gets his goblin friends and they steal your stuff! You lose.";
-    var enemyFastMessage = "The goblin is too fast for you and steals your gold anyways, you lose" // placeholder
-    var enemySlowMessage = "The goblin is too fast for you and steals your gold anyways, you lose" // placeholder
-    var enemyHideMessage = "you hid and lostmeme" //placeholder
+    var enemyFastMessage = "The goblin is too fast for you and steals your gold anyways, you lose"
+    var enemySlowMessage = "The goblin is too fast for you and steals your gold anyways, you lose"
+    var enemyHideMessage = "Your cowardice in hiding has resluted in a loss. The goblin finds you!" 
     
 }
 // prompt Variables
