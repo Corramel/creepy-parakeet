@@ -234,7 +234,7 @@ var playing = confirm("Want to play again?");
 }
    
    
-//IT JUST WERKS
+//IT JUST WERKS 
 
 }
 console.log(nicememe());
@@ -246,11 +246,11 @@ $(document).ready(function(){
     $(".greatmeme").slideUp();
 	$('#meme').click(function(){
 	 $(".greatmeme").slideDown();
-	 $(".greatmeme").mouseenter(function(){
+/*	 $(".greatmeme").mouseenter(function(){
 	    $(this).animate({
-	    background-color: '#FFFF00'
+	    width:'+=10px'
 	    });
-	 })
+	 })*/
     $('#meme').game();
 });
 });
