@@ -246,6 +246,11 @@ $(document).ready(function(){
     $(".greatmeme").slideUp();
 	$('#meme').click(function(){
 	 $(".greatmeme").slideDown();
+	 $(".greatmeme").mouseenter(function(){
+	    $(this).animate({
+	    background-color: '#FFFF00'
+	    });
+	 })
     $('#meme').game();
 });
 });
