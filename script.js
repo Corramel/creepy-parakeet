@@ -22,7 +22,7 @@ if(monstersChoice === monsters[0]){
     var enemyDodgeChance = 0; //Dragons can't dodge
     var enemyWinMessage = "<p>The dragon falls down like a mighty... Well, dragon. You've slain the dragon! You win!</p>";
     var enemyLoseMessage = "<p>The dragon stomps on you! You're crushed by the heavy weight, and are now a pancake. You lose.</p>";
-    var enemyFastMessage = "<p>You run away from the dragon, who is too lazy to chase after you. ...I guess you win?</p>";
+    var enemyFastMessage = "<p>You run away from the dragon, who just sprays a gigantic fireball at you. You kinda burn into a potato crisp.</p>";
     var enemySlowMessage = "<p>You tried to run away from the dragon, but it sees your lame attempt, and decides to gobble you up.</p>";
     var enemyHideMessage = "<p>The dragon burns the entire field! Taking shelter in a cave, you made a grave mistake. It's the dragon's cave...</p>"
 } else if(monstersChoice === monsters[1]){
@@ -61,7 +61,12 @@ var strength = prompt("Are you strong?").toLowerCase();
 var reflexes = prompt("Are you fast?").toLowerCase();
 var weapons = ["Bow and Arrows", "Sword"] //Will add staff system later, this is to show them what weapon they can choose.
 // User Variables
-var userHealth = 50;
+if(whatDo === "bow and arrows"){
+    var bowOrNot = "yes";
+} else {
+    var bowOrNot = "no";
+};
+var userHealth = 35;
 var userSpeed = [];
 var userDodgeChance = [];
 var userHitChance = Math.floor(Math.random()*10);
@@ -83,7 +88,7 @@ var userAttack = {
 
 switch(whatDo){
     case "attack":
-    var weaponChoice = prompt("What kind of weapon do you want to use? You currently have in your handy dandy backpack, a " + weapons[1] + " and " + weapons[0] + ".").toLowerCase();
+    var weaponChoice = prompt("What kind of weapon do you want to use? You currently have in your handy dandy backpack, a " + weapons[1] + " and some... Oh, it seems you only have a sword.").toLowerCase();
     
     switch(weaponChoice){
         case "sword":
@@ -93,7 +98,7 @@ switch(whatDo){
                 alert("You're strong enough to wield a shield along with your medium-length sword!");
                 var confirmShield = confirm("Do you want to use a shield? Your speed will be lowered by a small amount. Press OK to take the shield.");
                 if(confirmShield === true){
-                    var userHealth = 50 + Math.floor(Math.random()*12.5);
+                    var userHealth = 35 + Math.floor(Math.random()*12.5);
                     var userSpeed = 40;
                 }
                 }
@@ -115,23 +120,9 @@ switch(whatDo){
         }
         }
         break;
-        case "bow and arrows":
-            alert("So be it! You pick up your bow, and your quiver full of arrows!")
-            if(monstersChoice[2]){
-                var enemyDodgeChance = Math.floor(Math.random*30);
-                var userDamageAlert = "<p>You did " + userAttack.bowgob + " damage to the " + enemyName[1] + ".</p>";
-		$(userDamageAlert).appendTo('#combatlog');
-                enemyHealth = enemyHealth - userAttack.long;
-                userAttack.bowgob = Math.floor(Math.random()*7.5);
-            } else if(monstersChoice[1]){
-                var userDamageAlert = "<p>You did " + userAttack.bowogr + " damage to the " + enemyName[1] + ".</p>";
-		$(userDamageAlert).appendTo('#combatlog');
-            } else if(monstersChoice[0]){
-                var userDamageAlert = "<p>You did " + userAttack.bowdrag + " damage to the " + enemyName[1] + ".</p>";
-		$(userDamageAlert).appendTo('#combatlog');
-            }
-            
-        break;
+        default:
+       	
+        break; 
     }
 
 while(enemyHealth > 0 && userHealth > 0){
@@ -162,7 +153,7 @@ while(enemyHealth > 0 && userHealth > 0){
         $(enemyAttackMessage).appendTo('#combatlog');
     } else {
         var enemyDodgeMessage = enemyDodgeVariation[Math.floor(Math.random()*6)];
-        $(enemyAttackMesasge).appendTo('#combatlog');
+        $(enemyDodgeMessage).appendTo('#combatlog');
     }
     userHealth = userHealth - enemyAttackdmg;
     if(monstersChoice[0]){
@@ -184,11 +175,34 @@ while(enemyHealth > 0 && userHealth > 0){
             userAttack.medium = Math.floor(Math.random()*10);
         break;
         default:
-        alert("You did not follow rules and therefore lose.");
     }
     
     
 }
+/* switch(bowOrNot){
+     case "yes":
+            alert("So be it! You pick up your bow, and your quiver full of arrows!")
+            if(monstersChoice[2]){
+                var enemyDodgeChance = Math.floor(Math.random*30);
+                var userDamageAlert = "<p>You did " + userAttack.bowgob + " damage to the " + enemyName[1] + ".</p>";
+		$(userDamageAlert).appendTo('#combatlog');
+                enemyHealth = enemyHealth - userAttack.bowgob;
+                userAttack.bowgob = Math.floor(Math.random()*7.5);
+            } else if(monstersChoice[1]){
+                var userDamageAlert = "<p>You did " + userAttack.bowogr + " damage to the " + enemyName[1] + ".</p>";
+		$(userDamageAlert).appendTo('#combatlog');
+		enemyHealth = enemyHealth - userAttack.bowogr;
+                userAttack.bowogr = Math.floor(Math.random()*8);
+            } else if(monstersChoice[0]){
+                var userDamageAlert = "<p>You did " + userAttack.bowdrag + " damage to the " + enemyName[1] + ".</p>";
+		$(userDamageAlert).appendTo('#combatlog');
+		enemyHealth = enemyHealth - userAttack.bowdrag;
+                userAttack.bowdrag = Math.floor(Math.random()*9);
+            }
+        break;
+        default:
+        console.log("nicememe");
+} */
 if(enemyHealth <= 0 && userHealth > 0){
     $(enemyWinMessage).appendTo('#wlmessage');
     console.log("Win");
@@ -200,8 +214,8 @@ if(enemyHealth <= 0 && userHealth > 0){
 }
 break;
 case "run":
-    if(reflexes === "yes"){
-            $(enemyFastMessage).appendTo('#wlmessage');
+  if(reflexes === "yes"){
+             $(enemyFastMessage).appendTo('#wlmessage');
         } else {
             $(enemySlowMessage).appendTo('#wlmessage');
         }
