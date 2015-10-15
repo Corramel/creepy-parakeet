@@ -240,11 +240,12 @@ var playing = confirm("Want to play again?");
 console.log(nicememe());
 }
 });
+var dankZeldaMusic = "<audio autoplay loop>\n <source src = \"http://puu.sh/kKCuG/4aed4aaf98.mp3\" type = \"audio/mp3\"> \n</audio>";
 $(document).ready(function(){
 	$("#weaponsdiv").hide();
-    
+    $(".greatmeme").slideUp();
 	$('#meme').click(function(){
-	$
+	 $(".greatmeme").slideDown();
     $('#meme').game();
 });
 });
