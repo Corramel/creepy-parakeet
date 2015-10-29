@@ -43,7 +43,7 @@ if(monstersChoice === monsters[0]){
     var enemyName = ["Goblin", "goblin"];
     var enemySpeed = 50;
     var enemyHealth = 30;
-    var enemyDodgeVariation = ["<p>You dodge the goblin's dagger", "<p>You jump over you goblin's leg sweep!", "<p>You swipe the goblin's hands before he can poke your eyes", "<p>You dodge the goblin's kidney punch", "<p>You duck to avoid the goblin's drop kick", "<p>You matrix dodge the goblin's dagger" ]; // Possible for the goblin to take when he misses the drop kick? 
+    var enemyDodgeVariation = ["<p>You dodge the goblin's dagger</p>", "<p>You jump over you goblin's leg sweep!</p>", "<p>You swipe the goblin's hands before he can poke your eyes</p>", "<p>You dodge the goblin's kidney punch</p>", "<p>You duck to avoid the goblin's drop kick</p>", "<p>You matrix dodge the goblin's dagger</p>" ]; // Possible for the goblin to take when he misses the drop kick? 
     var enemyVariation = ["<p>The goblin shanks you with his dagger and deals ", "<p>The goblin sweeps your legs out from under you and deals ", "<p>The goblin manages to poke your eyes and dealt ", "<p>The goblin punches you in your kidney for ", "<p>The goblin drop kicks you in the face to deal ", "<p>The goblin throws his dagger at you and dealt " ]; 
     var enemyAttackdmg = Math.floor(Math.random()*8);
     var enemyHitChance = Math.floor(Math.random()*20);
@@ -130,10 +130,13 @@ while(enemyHealth > 0 && userHealth > 0){
     console.log();
     if(monstersChoice[0]){
         enemyHitChance = Math.floor(Math.random()*15);
+        $("<p>You missed your chance!</p>").appendTo('#combatlog');
     } else if(monstersChoice[1]){
         enemyHitChance = Math.floor(Math.random()*12);
+        $("<p>You missed your chance!</p>").appendTo('#combatlog');
     } else if(monstersChoice[2]){
         enemyHitChance = Math.floor(Math.random()*20);
+        $("<p>You missed your chance!</p>").appendTo('#combatlog');
     }
     
 } else {
